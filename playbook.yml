@@ -1,0 +1,26 @@
+- name: Nginx Install
+  hosts: web
+  become: yes
+  gather_facts: true
+
+  tasks:
+    - name: EC2 Nginx install
+      yum:
+        name: nginx
+        state: present 
+
+    - name: Ensure Nginx is running
+      service:
+        name: nginx
+        state: started
+
+
+- name: Java Install on the other node
+  hosts: app
+  become: yes
+  gather_facts: true
+
+  tasks:
+    - name: Install Java 17
+      yum: java-17-amazon-corretto
+      state: present
