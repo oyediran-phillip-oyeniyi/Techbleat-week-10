@@ -56,7 +56,7 @@ jobs:
       - name: Checkout 
         uses: actions/checkout@v3
 
-      -name: List out files
+      - name: List out files
         run: |
           pwd
           ls -ltr
