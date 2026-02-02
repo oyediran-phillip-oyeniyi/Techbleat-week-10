@@ -22,5 +22,6 @@
 
   tasks:
     - name: Install Java 17
-      yum: java-17-amazon-corretto
-      state: present
+      yum: 
+        name: java-17-amazon-corretto
+        state: present
