@@ -62,9 +62,6 @@ jobs:
           ls -ltr
           echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > /tmp/key.pem
           chmod 400 /tmp/key.pem
-      
-      - name: Set Ansible config
-        run: echo "ANSIBLE_CONFIG=$(pwd)/ansible.cfg" >> $GITHUB_ENV
 
       - name: Run Playbook
         run: |
